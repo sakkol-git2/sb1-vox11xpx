@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Styles */
+.bg-gradient-overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(79, 70, 229, 0.6));
+}
+
+/* Improved Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply tracking-tight;
+}
+
+/* Improved Button Styles */
+button {
+  @apply transition-all duration-300;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4338ca;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(90deg, #FF7EB3, #FFC371);
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(90deg, #7F00FF, #E100FF);
+}
+
+/* Enhanced Button Styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105;
+  background: linear-gradient(90deg, #6C63FF, #9189FA);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-full font-medium border-2 transition-all duration-300 transform hover:scale-105;
+}
+
+/* Card Styles */
+.card {
+  @apply rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl;
+  background: white;
+}
+
+/* Form Styles */
+.form-input {
+  @apply rounded-lg border-2 border-gray-200 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 transition-all duration-300;
+}
+
+/* Navigation Styles */
+.nav-link {
+  @apply relative overflow-hidden;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-current transform scale-x-0 transition-transform duration-300;
+}
+
+.nav-link:hover::after {
+  @apply scale-x-100;
+}
+
+/* Add padding to main content to account for fixed navbar */
+main {
+  @apply pt-20;
+}
